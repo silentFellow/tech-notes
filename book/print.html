@@ -1,0 +1,563 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>test</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-0392ca55.css">
+        <link rel="stylesheet" href="css/chrome-fc474251.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-0e58e7f7.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-47ffed79.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">test</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="docker-notes"><a href="#docker-notes" class="header">Docker Notes</a></h1>
+<h3 id="what-is-docker"><a class="header" href="#what-is-docker">What is docker?</a></h3>
+<p><code>Docker</code> is a tool that provides reproducible environments for applications</p>
+<blockquote>
+<p>Docker helps developers build, share, run, and verify applications anywhere — without tedious environment configuration or management.</p>
+</blockquote>
+<hr>
+<h3 id="problem-and-how-docker-solves-the-issue"><a class="header" href="#problem-and-how-docker-solves-the-issue">Problem and how docker solves the issue</a></h3>
+<ol>
+<li>“Works on my machine” syndrome everywhere. -&gt; reproducibility from a image config.</li>
+</ol>
+<blockquote>
+<p><code>Works on my machine</code> usually happens due to version mismatch, environment inconsistencies, platform dependencies and so on.</p>
+</blockquote>
+<hr>
+<h3 id="key-terminologies"><a class="header" href="#key-terminologies">Key terminologies</a></h3>
+<ol>
+<li>Image - a <code>read-only</code> blueprint/template(like <code>class</code> in <code>OOPs</code> languages).</li>
+<li>Container:
+<ul>
+<li>actual entity from the blueprint.</li>
+<li>actual running instance of a template.</li>
+<li>like <code>object</code> in <code>OOPs</code> languages.</li>
+<li>it contains your application, all its dependencies, runtime environment.</li>
+</ul>
+</li>
+<li>Dockerfile:
+<ul>
+<li>Instruction on building the image.</li>
+<li>contains <code>base image/os, dependencies, commands, startup process</code>.</li>
+</ul>
+</li>
+<li>Registry:
+<ul>
+<li>A place to store the images.</li>
+<li>Like <code>github</code> for repos, but for docker images.</li>
+<li>Ex: <a href="hub.docker.com">docker hub</a></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="virtual-machinesvm-vs-docker"><a class="header" href="#virtual-machinesvm-vs-docker">Virtual Machines(VM) vs Docker</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>VM</th><th>Docker Container</th></tr>
+</thead>
+<tbody>
+<tr><td>Full OS per VM</td><td>Shares host kernel</td></tr>
+<tr><td>Heavy</td><td>Lightweight</td></tr>
+<tr><td>Slow boot</td><td>Fast startup</td></tr>
+<tr><td>GBs in size</td><td>MBs usually</td></tr>
+<tr><td>Hypervisor needed</td><td>Docker Engine</td></tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h3 id="hypervisor"><a class="header" href="#hypervisor">Hypervisor</a></h3>
+<ul>
+<li><code>Hypervisor</code> is a software that allows multiple virtual machines(VM) run on a single physical computer.</li>
+<li>It virtualizes hardware, allocates resources, isolates host OS, manage VM execution.</li>
+<li>Each VM gets its own kernal, os, virtual hardware.</li>
+</ul>
+<h3 id="types-of-hypervisors"><a class="header" href="#types-of-hypervisors">Types of Hypervisors</a></h3>
+<ul>
+<li><code>Type 1</code>: runs on bare metal.</li>
+<li><code>Type 2</code>: runs on another <code>OS</code>.</li>
+</ul>
+<hr>
+<h3 id="docker-engine"><a class="header" href="#docker-engine">Docker engine</a></h3>
+<ul>
+<li>allows bundling, packaging, execution of a docker container.</li>
+<li>Ex: <code>dockerd</code>, <code>docker cli</code></li>
+<li>since, docker container runs on the <code>OS host kernal</code>, <code>docker engine</code> usually works with process isolation(like <code>sandbox</code>).</li>
+</ul>
+<hr>
+<h3 id="what-is-an-base-image-and-is-it-required"><a class="header" href="#what-is-an-base-image-and-is-it-required">What is an base image and is it required?</a></h3>
+<p>A base image gives your container a starting filesystem + runtime environment. It usually includes a <code>shell</code>, <code>filesystem</code>, <code>binaries</code>, <code>runtime</code>, <code>libraries</code>, <code>package manager(if included)</code>.</p>
+<blockquote>
+<p>NOTE: we can create a docker image without any base image, by using <code>FROM scratch</code> keyword, usually when working with a statically compiled language(simply to execute the binary directly).</p>
+</blockquote>
+<hr>
+<h3 id="limitations-of-docker-runtime"><a class="header" href="#limitations-of-docker-runtime">Limitations of Docker Runtime</a></h3>
+<ul>
+<li>Containers share the host kernel instead of running their own full OS.</li>
+<li>Because of this, containers are limited by the host OS kernel compatibility.</li>
+</ul>
+<h4 id="native-compatibility"><a class="header" href="#native-compatibility">Native Compatibility</a></h4>
+<ul>
+<li>Linux containers run natively on Linux.</li>
+<li>Windows containers run natively on Windows.</li>
+</ul>
+<h4 id="macos--windows-case"><a class="header" href="#macos--windows-case">macOS / Windows Case</a></h4>
+<ul>
+<li>On macOS and Windows, <code>Docker Desktop</code> creates a lightweight Linux VM internally.</li>
+<li>Docker containers actually run inside that Linux VM.</li>
+<li>This allows Linux-based images to run on:
+<ul>
+<li>Linux</li>
+<li>Windows</li>
+<li>macOS</li>
+</ul>
+</li>
+</ul>
+<h4 id="important-limitation"><a class="header" href="#important-limitation">Important Limitation</a></h4>
+<ul>
+<li>Since Linux containers depend on the Linux kernel:
+<ul>
+<li>Linux containers cannot run directly on non-Linux kernels.</li>
+</ul>
+</li>
+<li>Similarly:
+<ul>
+<li>Windows containers require the Windows kernel.</li>
+<li>Windows containers cannot run natively on Linux/macOS.</li>
+</ul>
+</li>
+</ul>
+<h4 id="simple-mental-model"><a class="header" href="#simple-mental-model">Simple Mental Model</a></h4>
+<pre><code class="language-text">Linux Container  -&gt; Needs Linux Kernel
+Windows Container -&gt; Needs Windows Kernel
+</code></pre>
+<hr>
+<h3 id="docker-installation"><a class="header" href="#docker-installation">Docker installation</a></h3>
+<ul>
+<li>Visit <a href="https://www.docker.com/">docker home page</a></li>
+<li>click on <code>download docker desktop</code> to get both <code>CLI</code> and <code>GUI</code>.</li>
+<li>select your respective <code>OS</code> and install it.</li>
+<li>verify docker installation status with:
+<ul>
+<li><code>docker --version</code> command in the terminal.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="basic-docker-commands"><a class="header" href="#basic-docker-commands">basic docker commands</a></h3>
+<ul>
+<li><code>docker pull &lt;image-name&gt;</code> -&gt; pulls a specific image from the <code>registry</code>.</li>
+<li><code>docker pull &lt;image-name&gt;:&lt;tag&gt;</code> -&gt; pulls a specific version of a specific image from the <code>registry</code>.</li>
+<li><code>docker images</code> -&gt; list all docker images in the system. Once a docker image is pulled, it stays in the computer, until it is removed.</li>
+<li><code>docker run &lt;image-name&gt;</code>:
+<ul>
+<li>to create a new container of the image and runs it in attached mode(unless specified with detached mode).</li>
+<li>It always creates a new container, even already exists for the image.</li>
+<li>if the images not exists, it pulls from the registry and run it.</li>
+</ul>
+</li>
+<li><code>docker run --name &lt;container-name&gt; &lt;image-name&gt;</code> -&gt; assigns a custom name to the container instead of random unique one.</li>
+<li><code>docker ps</code> -&gt; shows all running containers only.</li>
+<li><code>docker ps -a</code> -&gt; shows all containers(running + stopped).</li>
+<li><code>docker logs &lt;container-name/id&gt;</code> -&gt; shows the logs of the container with id or name in the <code>stdout</code>.</li>
+<li><code>docker run -it &lt;image-name&gt;</code>:
+<ul>
+<li><code>i</code> -&gt; interactive mode.</li>
+<li><code>t</code> -&gt; allocates <code>pseudo TTY(terminal)</code>.</li>
+<li>Docker’s interactive mode allows direct interaction with a running container’s shell, enabling real-time command execution and interaction with its file system. This mode is particularly useful for debugging, development, and troubleshooting within a container.</li>
+</ul>
+</li>
+<li><code>Attached Mode</code>:
+<ul>
+<li>In attached mode, the container’s standard input, output, and error streams are directly connected to your terminal. You see the container’s output in real-time in your terminal window.</li>
+<li>This mode is suitable for interactive tasks, debugging, or applications that require direct user interaction or need to be stopped when the terminal is closed.</li>
+<li>By default, docker run starts a container in attached mode unless specified otherwise</li>
+</ul>
+</li>
+<li><code>Detached Mode</code>:
+<ul>
+<li>In detached mode, the container runs in the background, independent of your terminal session.</li>
+<li>You do not see the container’s output directly in your terminal, and your terminal remains free for other commands.</li>
+<li>This mode is ideal for services or applications that need to run continuously without requiring immediate attention or user interaction.</li>
+<li>You typically use the -d or –detach flag with docker run to start a container in detached mode.</li>
+</ul>
+</li>
+<li><code>docker attack &lt;container-name/id&gt;</code> -&gt; attaching to a detached container with id or image.
+<ul>
+<li>To detach from a container without stopping it, you typically use the key sequence Ctrl+P followed by Ctrl+Q.</li>
+</ul>
+</li>
+<li><code>docker start &lt;container-name/id&gt;</code> -&gt; to restart the stopped container with id or image.</li>
+<li><code>docker stop &lt;container-name/id&gt;</code> -&gt; to stop the running container with id or image.</li>
+<li><code>docker rmi &lt;image-name&gt;</code> -&gt; remove unused image to save disk space.</li>
+<li><code>docker rm &lt;container-name&gt;</code> -&gt; remove unused container to save disk space.</li>
+<li><code>docker image prune</code> -&gt; removes all unused images.</li>
+<li><code>docker container prune</code> -&gt; removes all unused containers.</li>
+<li><code>docker exec -it &lt;container-name/id&gt;</code> -&gt; runs commands on the running container with id or name and show the output in <code>stdout</code>.</li>
+</ul>
+<hr>
+<h3 id="dockerfile-and-how-to-use-it"><a class="header" href="#dockerfile-and-how-to-use-it">Dockerfile and how to use it?</a></h3>
+<p><code>Dockerfile</code> contains template on the docker image. it usually contains application logic, environment, dependencies and startup command.</p>
+<blockquote>
+<p><code>Dockerfile</code> usually works on the principle of layering. i.e. creating a new image on top of another image.</p>
+</blockquote>
+<hr>
+<h3 id="sample-dockerfile-and-its-explanation"><a class="header" href="#sample-dockerfile-and-its-explanation">Sample Dockerfile and it’s explanation</a></h3>
+<pre><code class="language-Dockerfile"># lightweight base image
+FROM node:10-alpine
+
+# working directory inside container
+# all upcoming commands will be executed from here
+WORKDIR /app
+
+# copy dependency/configuration files first
+# this helps docker layer caching
+# installation steps rerun only if these files change
+COPY package*.json ./
+
+# run commands during image build time
+# usually used for installing dependencies/setup
+RUN npm install
+
+# copy remaining source code/files
+# files inside .dockerignore are excluded automatically
+COPY . .
+
+# declare the port used by the application
+# this is only metadata/documentation
+# actual port mapping should be done while running
+EXPOSE 8080
+
+# default startup command for container
+CMD ["node", "app.js"]
+</code></pre>
+<blockquote>
+<p>After creating a <code>Dockerfile</code> run:
+<code>docker build -t &lt;tag-name&gt; .</code> -&gt; to build it.</p>
+</blockquote>
+<hr>
+<h3 id="port-mapping"><a class="header" href="#port-mapping">Port Mapping</a></h3>
+<ul>
+<li>docker containers runs on isolated environment(docker engine is responsible for process isolation).</li>
+<li>but sometimes our other external application may be need to communicate with the docker container instance.</li>
+<li>to address this issue we use a concept called <code>port mapping</code>.</li>
+</ul>
+<pre><code class="language-sh">docker run -p &lt;host-port&gt;:&lt;container-port&gt; &lt;image-name&gt;
+</code></pre>
+<hr>
+<h3 id="volumes"><a class="header" href="#volumes">volumes</a></h3>
+<ul>
+<li>since, docker runs in a isolated environment, usually data from native system to the container or data from one container to another container can’t be shared.</li>
+<li>to address this issue, allowing data persistance, we use a concept called <code>volumes</code>.</li>
+</ul>
+<pre><code class="language-sh">docker run -v &lt;host-path&gt;:&lt;container-path&gt; &lt;image-name&gt;
+</code></pre>
+<ul>
+<li><code>docker volume create &lt;volume-name&gt;</code> -&gt; creates a new volume.</li>
+<li><code>docker volume ls</code> -&gt; list docker volumes.</li>
+<li><code>docker volume inspect &lt;volume-name&gt;</code> -&gt; inspect docker volume.</li>
+<li><code>docker volume rm &lt;volume-name&gt;</code> -&gt; remove a docker volume.</li>
+</ul>
+<hr>
+<h3 id="what-is-docker-compose-and-why-is-it-needed"><a class="header" href="#what-is-docker-compose-and-why-is-it-needed">What is <code>docker-compose</code> and why is it needed?</a></h3>
+<ul>
+<li>A real world application usually contains many services such as, frontend, backend, database.</li>
+<li>each service depends on various others like frontend depends on backend, while backend depends on database.</li>
+<li>so it is hard to scale effectively.</li>
+<li>also for each service to connect with one another we need a manual network setup using docker.</li>
+<li>manual process are error prone and hard to scale effectively.</li>
+<li>docker compose is way to write on how different services interact and depends on each other and takes care of it automatically.</li>
+</ul>
+<hr>
+<h3 id="sample-docker-composeyml-and-its-explanation"><a class="header" href="#sample-docker-composeyml-and-its-explanation">Sample <code>docker-compose.yml</code> and it’s explanation</a></h3>
+<pre><code class="language-yaml"># version name
+version: "1.0"
+
+services:
+  # frontend application
+  frontend:
+    build: ./frontend
+
+    # expose frontend to host machine
+    ports:
+      - "5173:5173"
+
+    # frontend should start after backend
+    depends_on:
+      - backend
+
+  # backend application
+  backend:
+    build: ./backend
+
+    # expose backend api to host machine
+    ports:
+      - "8080:8080"
+
+    # environment variables for backend
+    environment:
+      MONGO_URL: mongodb://database:27017/app
+
+    # backend should start after database
+    depends_on:
+      - database
+
+  # mongodb database service
+  database:
+    image: mongo
+
+    # persist database data using volumes
+    volumes:
+      - mongo-data:/data/db
+
+    # expose database port (optional for local debugging)
+    ports:
+      - "27017:27017"
+
+# named volume managed by docker
+volumes:
+  mongo-data:
+</code></pre>
+<hr>
+<h3 id="docker-architecture"><a class="header" href="#docker-architecture">Docker architecture</a></h3>
+<p><img src="docker-architecture.png" alt="Docker architecture"></p>
+<hr>
+<h3 id="references"><a class="header" href="#references">References</a></h3>
+<ul>
+<li><a href="https://docs.docker.com">Docker docs official</a></li>
+<li><a href="https://www.linkedin.com/pulse/complete-docker-notes-from-basics-advanced-amit-pandey-97e0f/">Linkedin docker notes</a></li>
+<li><a href="https://github.com/khalid-el-masnaoui/docker-notes">Github cheatsheet</a> -&gt; contains useful info about commands and it’s flags.</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-09f2665d.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-c22b7243.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+
+    </div>
+    </body>
+</html>
