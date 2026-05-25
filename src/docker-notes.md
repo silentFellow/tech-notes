@@ -297,7 +297,7 @@ volumes:
 
 ### Docker architecture
 
-![Docker architecture](./docker-architecture.png)
+![Docker architecture](./images/docker-architecture.png)
 
 ---
 

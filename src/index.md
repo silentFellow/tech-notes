@@ -1,4 +1,3 @@
-# Summary
+### Table Of Contents
 
-- [Index](./index.md)
 - [Docker Notes](./docker-notes.md)

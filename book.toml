@@ -1,4 +1,7 @@
 [book]
-title = "tech-notes"
+title = "Tech Notes"
 authors = ["gowthams-cdw"]
 language = "en"
+
+[output.html]
+site-url = "/"

@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Docker Notes - test</title>
+        <title>Index - Tech Notes</title>
 
 
         <!-- Custom HTML head -->
@@ -35,10 +35,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-0e58e7f7.js";
+            window.path_to_searchindex_js = "searchindex-2aafa8f1.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-47ffed79.js"></script>
+        <script src="toc-fd04837d.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -137,7 +137,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">test</h1>
+                    <h1 class="menu-title">Tech Notes</h1>
 
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -174,323 +174,9 @@
 
                 <div id="mdbook-content" class="content">
                     <main>
-                        <h3 id="what-is-docker"><a class="header" href="#what-is-docker">What is docker?</a></h3>
-<p><code>Docker</code> is a tool that provides reproducible environments for applications</p>
-<blockquote>
-<p>Docker helps developers build, share, run, and verify applications anywhere — without tedious environment configuration or management.</p>
-</blockquote>
-<hr>
-<h3 id="problem-and-how-docker-solves-the-issue"><a class="header" href="#problem-and-how-docker-solves-the-issue">Problem and how docker solves the issue</a></h3>
-<ol>
-<li>“Works on my machine” syndrome everywhere. -&gt; reproducibility from a image config.</li>
-</ol>
-<blockquote>
-<p><code>Works on my machine</code> usually happens due to version mismatch, environment inconsistencies, platform dependencies and so on.</p>
-</blockquote>
-<hr>
-<h3 id="key-terminologies"><a class="header" href="#key-terminologies">Key terminologies</a></h3>
-<ol>
-<li>Image - a <code>read-only</code> blueprint/template(like <code>class</code> in <code>OOPs</code> languages).</li>
-<li>Container:
+                        <h3 id="table-of-contents"><a class="header" href="#table-of-contents">Table Of Contents</a></h3>
 <ul>
-<li>actual entity from the blueprint.</li>
-<li>actual running instance of a template.</li>
-<li>like <code>object</code> in <code>OOPs</code> languages.</li>
-<li>it contains your application, all its dependencies, runtime environment.</li>
-</ul>
-</li>
-<li>Dockerfile:
-<ul>
-<li>Instruction on building the image.</li>
-<li>contains <code>base image/os, dependencies, commands, startup process</code>.</li>
-</ul>
-</li>
-<li>Registry:
-<ul>
-<li>A place to store the images.</li>
-<li>Like <code>github</code> for repos, but for docker images.</li>
-<li>Ex: <a href="hub.docker.com">docker hub</a></li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="virtual-machinesvm-vs-docker"><a class="header" href="#virtual-machinesvm-vs-docker">Virtual Machines(VM) vs Docker</a></h3>
-<div class="table-wrapper">
-<table>
-<thead>
-<tr><th>VM</th><th>Docker Container</th></tr>
-</thead>
-<tbody>
-<tr><td>Full OS per VM</td><td>Shares host kernel</td></tr>
-<tr><td>Heavy</td><td>Lightweight</td></tr>
-<tr><td>Slow boot</td><td>Fast startup</td></tr>
-<tr><td>GBs in size</td><td>MBs usually</td></tr>
-<tr><td>Hypervisor needed</td><td>Docker Engine</td></tr>
-</tbody>
-</table>
-</div>
-<hr>
-<h3 id="hypervisor"><a class="header" href="#hypervisor">Hypervisor</a></h3>
-<ul>
-<li><code>Hypervisor</code> is a software that allows multiple virtual machines(VM) run on a single physical computer.</li>
-<li>It virtualizes hardware, allocates resources, isolates host OS, manage VM execution.</li>
-<li>Each VM gets its own kernal, os, virtual hardware.</li>
-</ul>
-<h3 id="types-of-hypervisors"><a class="header" href="#types-of-hypervisors">Types of Hypervisors</a></h3>
-<ul>
-<li><code>Type 1</code>: runs on bare metal.</li>
-<li><code>Type 2</code>: runs on another <code>OS</code>.</li>
-</ul>
-<hr>
-<h3 id="docker-engine"><a class="header" href="#docker-engine">Docker engine</a></h3>
-<ul>
-<li>allows bundling, packaging, execution of a docker container.</li>
-<li>Ex: <code>dockerd</code>, <code>docker cli</code></li>
-<li>since, docker container runs on the <code>OS host kernal</code>, <code>docker engine</code> usually works with process isolation(like <code>sandbox</code>).</li>
-</ul>
-<hr>
-<h3 id="what-is-an-base-image-and-is-it-required"><a class="header" href="#what-is-an-base-image-and-is-it-required">What is an base image and is it required?</a></h3>
-<p>A base image gives your container a starting filesystem + runtime environment. It usually includes a <code>shell</code>, <code>filesystem</code>, <code>binaries</code>, <code>runtime</code>, <code>libraries</code>, <code>package manager(if included)</code>.</p>
-<blockquote>
-<p>NOTE: we can create a docker image without any base image, by using <code>FROM scratch</code> keyword, usually when working with a statically compiled language(simply to execute the binary directly).</p>
-</blockquote>
-<hr>
-<h3 id="limitations-of-docker-runtime"><a class="header" href="#limitations-of-docker-runtime">Limitations of Docker Runtime</a></h3>
-<ul>
-<li>Containers share the host kernel instead of running their own full OS.</li>
-<li>Because of this, containers are limited by the host OS kernel compatibility.</li>
-</ul>
-<h4 id="native-compatibility"><a class="header" href="#native-compatibility">Native Compatibility</a></h4>
-<ul>
-<li>Linux containers run natively on Linux.</li>
-<li>Windows containers run natively on Windows.</li>
-</ul>
-<h4 id="macos--windows-case"><a class="header" href="#macos--windows-case">macOS / Windows Case</a></h4>
-<ul>
-<li>On macOS and Windows, <code>Docker Desktop</code> creates a lightweight Linux VM internally.</li>
-<li>Docker containers actually run inside that Linux VM.</li>
-<li>This allows Linux-based images to run on:
-<ul>
-<li>Linux</li>
-<li>Windows</li>
-<li>macOS</li>
-</ul>
-</li>
-</ul>
-<h4 id="important-limitation"><a class="header" href="#important-limitation">Important Limitation</a></h4>
-<ul>
-<li>Since Linux containers depend on the Linux kernel:
-<ul>
-<li>Linux containers cannot run directly on non-Linux kernels.</li>
-</ul>
-</li>
-<li>Similarly:
-<ul>
-<li>Windows containers require the Windows kernel.</li>
-<li>Windows containers cannot run natively on Linux/macOS.</li>
-</ul>
-</li>
-</ul>
-<h4 id="simple-mental-model"><a class="header" href="#simple-mental-model">Simple Mental Model</a></h4>
-<pre><code class="language-text">Linux Container  -&gt; Needs Linux Kernel
-Windows Container -&gt; Needs Windows Kernel
-</code></pre>
-<hr>
-<h3 id="docker-installation"><a class="header" href="#docker-installation">Docker installation</a></h3>
-<ul>
-<li>Visit <a href="https://www.docker.com/">docker home page</a></li>
-<li>click on <code>download docker desktop</code> to get both <code>CLI</code> and <code>GUI</code>.</li>
-<li>select your respective <code>OS</code> and install it.</li>
-<li>verify docker installation status with:
-<ul>
-<li><code>docker --version</code> command in the terminal.</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="basic-docker-commands"><a class="header" href="#basic-docker-commands">basic docker commands</a></h3>
-<ul>
-<li><code>docker pull &lt;image-name&gt;</code> -&gt; pulls a specific image from the <code>registry</code>.</li>
-<li><code>docker pull &lt;image-name&gt;:&lt;tag&gt;</code> -&gt; pulls a specific version of a specific image from the <code>registry</code>.</li>
-<li><code>docker images</code> -&gt; list all docker images in the system. Once a docker image is pulled, it stays in the computer, until it is removed.</li>
-<li><code>docker run &lt;image-name&gt;</code>:
-<ul>
-<li>to create a new container of the image and runs it in attached mode(unless specified with detached mode).</li>
-<li>It always creates a new container, even already exists for the image.</li>
-<li>if the images not exists, it pulls from the registry and run it.</li>
-</ul>
-</li>
-<li><code>docker run --name &lt;container-name&gt; &lt;image-name&gt;</code> -&gt; assigns a custom name to the container instead of random unique one.</li>
-<li><code>docker ps</code> -&gt; shows all running containers only.</li>
-<li><code>docker ps -a</code> -&gt; shows all containers(running + stopped).</li>
-<li><code>docker logs &lt;container-name/id&gt;</code> -&gt; shows the logs of the container with id or name in the <code>stdout</code>.</li>
-<li><code>docker run -it &lt;image-name&gt;</code>:
-<ul>
-<li><code>i</code> -&gt; interactive mode.</li>
-<li><code>t</code> -&gt; allocates <code>pseudo TTY(terminal)</code>.</li>
-<li>Docker’s interactive mode allows direct interaction with a running container’s shell, enabling real-time command execution and interaction with its file system. This mode is particularly useful for debugging, development, and troubleshooting within a container.</li>
-</ul>
-</li>
-<li><code>Attached Mode</code>:
-<ul>
-<li>In attached mode, the container’s standard input, output, and error streams are directly connected to your terminal. You see the container’s output in real-time in your terminal window.</li>
-<li>This mode is suitable for interactive tasks, debugging, or applications that require direct user interaction or need to be stopped when the terminal is closed.</li>
-<li>By default, docker run starts a container in attached mode unless specified otherwise</li>
-</ul>
-</li>
-<li><code>Detached Mode</code>:
-<ul>
-<li>In detached mode, the container runs in the background, independent of your terminal session.</li>
-<li>You do not see the container’s output directly in your terminal, and your terminal remains free for other commands.</li>
-<li>This mode is ideal for services or applications that need to run continuously without requiring immediate attention or user interaction.</li>
-<li>You typically use the -d or –detach flag with docker run to start a container in detached mode.</li>
-</ul>
-</li>
-<li><code>docker attack &lt;container-name/id&gt;</code> -&gt; attaching to a detached container with id or image.
-<ul>
-<li>To detach from a container without stopping it, you typically use the key sequence Ctrl+P followed by Ctrl+Q.</li>
-</ul>
-</li>
-<li><code>docker start &lt;container-name/id&gt;</code> -&gt; to restart the stopped container with id or image.</li>
-<li><code>docker stop &lt;container-name/id&gt;</code> -&gt; to stop the running container with id or image.</li>
-<li><code>docker rmi &lt;image-name&gt;</code> -&gt; remove unused image to save disk space.</li>
-<li><code>docker rm &lt;container-name&gt;</code> -&gt; remove unused container to save disk space.</li>
-<li><code>docker image prune</code> -&gt; removes all unused images.</li>
-<li><code>docker container prune</code> -&gt; removes all unused containers.</li>
-<li><code>docker exec -it &lt;container-name/id&gt;</code> -&gt; runs commands on the running container with id or name and show the output in <code>stdout</code>.</li>
-</ul>
-<hr>
-<h3 id="dockerfile-and-how-to-use-it"><a class="header" href="#dockerfile-and-how-to-use-it">Dockerfile and how to use it?</a></h3>
-<p><code>Dockerfile</code> contains template on the docker image. it usually contains application logic, environment, dependencies and startup command.</p>
-<blockquote>
-<p><code>Dockerfile</code> usually works on the principle of layering. i.e. creating a new image on top of another image.</p>
-</blockquote>
-<hr>
-<h3 id="sample-dockerfile-and-its-explanation"><a class="header" href="#sample-dockerfile-and-its-explanation">Sample Dockerfile and it’s explanation</a></h3>
-<pre><code class="language-Dockerfile"># lightweight base image
-FROM node:10-alpine
-
-# working directory inside container
-# all upcoming commands will be executed from here
-WORKDIR /app
-
-# copy dependency/configuration files first
-# this helps docker layer caching
-# installation steps rerun only if these files change
-COPY package*.json ./
-
-# run commands during image build time
-# usually used for installing dependencies/setup
-RUN npm install
-
-# copy remaining source code/files
-# files inside .dockerignore are excluded automatically
-COPY . .
-
-# declare the port used by the application
-# this is only metadata/documentation
-# actual port mapping should be done while running
-EXPOSE 8080
-
-# default startup command for container
-CMD ["node", "app.js"]
-</code></pre>
-<blockquote>
-<p>After creating a <code>Dockerfile</code> run:
-<code>docker build -t &lt;tag-name&gt; .</code> -&gt; to build it.</p>
-</blockquote>
-<hr>
-<h3 id="port-mapping"><a class="header" href="#port-mapping">Port Mapping</a></h3>
-<ul>
-<li>docker containers runs on isolated environment(docker engine is responsible for process isolation).</li>
-<li>but sometimes our other external application may be need to communicate with the docker container instance.</li>
-<li>to address this issue we use a concept called <code>port mapping</code>.</li>
-</ul>
-<pre><code class="language-sh">docker run -p &lt;host-port&gt;:&lt;container-port&gt; &lt;image-name&gt;
-</code></pre>
-<hr>
-<h3 id="volumes"><a class="header" href="#volumes">volumes</a></h3>
-<ul>
-<li>since, docker runs in a isolated environment, usually data from native system to the container or data from one container to another container can’t be shared.</li>
-<li>to address this issue, allowing data persistance, we use a concept called <code>volumes</code>.</li>
-</ul>
-<pre><code class="language-sh">docker run -v &lt;host-path&gt;:&lt;container-path&gt; &lt;image-name&gt;
-</code></pre>
-<ul>
-<li><code>docker volume create &lt;volume-name&gt;</code> -&gt; creates a new volume.</li>
-<li><code>docker volume ls</code> -&gt; list docker volumes.</li>
-<li><code>docker volume inspect &lt;volume-name&gt;</code> -&gt; inspect docker volume.</li>
-<li><code>docker volume rm &lt;volume-name&gt;</code> -&gt; remove a docker volume.</li>
-</ul>
-<hr>
-<h3 id="what-is-docker-compose-and-why-is-it-needed"><a class="header" href="#what-is-docker-compose-and-why-is-it-needed">What is <code>docker-compose</code> and why is it needed?</a></h3>
-<ul>
-<li>A real world application usually contains many services such as, frontend, backend, database.</li>
-<li>each service depends on various others like frontend depends on backend, while backend depends on database.</li>
-<li>so it is hard to scale effectively.</li>
-<li>also for each service to connect with one another we need a manual network setup using docker.</li>
-<li>manual process are error prone and hard to scale effectively.</li>
-<li>docker compose is way to write on how different services interact and depends on each other and takes care of it automatically.</li>
-</ul>
-<hr>
-<h3 id="sample-docker-composeyml-and-its-explanation"><a class="header" href="#sample-docker-composeyml-and-its-explanation">Sample <code>docker-compose.yml</code> and it’s explanation</a></h3>
-<pre><code class="language-yaml"># version name
-version: "1.0"
-
-services:
-  # frontend application
-  frontend:
-    build: ./frontend
-
-    # expose frontend to host machine
-    ports:
-      - "5173:5173"
-
-    # frontend should start after backend
-    depends_on:
-      - backend
-
-  # backend application
-  backend:
-    build: ./backend
-
-    # expose backend api to host machine
-    ports:
-      - "8080:8080"
-
-    # environment variables for backend
-    environment:
-      MONGO_URL: mongodb://database:27017/app
-
-    # backend should start after database
-    depends_on:
-      - database
-
-  # mongodb database service
-  database:
-    image: mongo
-
-    # persist database data using volumes
-    volumes:
-      - mongo-data:/data/db
-
-    # expose database port (optional for local debugging)
-    ports:
-      - "27017:27017"
-
-# named volume managed by docker
-volumes:
-  mongo-data:
-</code></pre>
-<hr>
-<h3 id="docker-architecture"><a class="header" href="#docker-architecture">Docker architecture</a></h3>
-<p><img src="./docker-architecture.png" alt="Docker architecture"></p>
-<hr>
-<h3 id="references"><a class="header" href="#references">References</a></h3>
-<ul>
-<li><a href="https://docs.docker.com">Docker docs official</a></li>
-<li><a href="https://www.linkedin.com/pulse/complete-docker-notes-from-basics-advanced-amit-pandey-97e0f/">Linkedin docker notes</a></li>
-<li><a href="https://github.com/khalid-el-masnaoui/docker-notes">Github cheatsheet</a> -&gt; contains useful info about commands and it’s flags.</li>
+<li><a href="./docker-notes.html">Docker Notes</a></li>
 </ul>
 
                     </main>
@@ -498,6 +184,9 @@ volumes:
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
 
+                            <a rel="next prefetch" href="docker-notes.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -506,6 +195,9 @@ volumes:
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
 
+                    <a rel="next prefetch" href="docker-notes.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
             </nav>
 
         </div>
